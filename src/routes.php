@@ -18,16 +18,6 @@ use Automattic\WooCommerce\HttpClient\HttpClientException;
 
 $app->get('/',function (Request $request, Response $response, array $args){
 
-    //echo"hello";
-//    $woo = new Client("http://princesspurpose.co.za",
-//        'ck_960abab003256955ac3585ceeb8e7c5c6d3c441d',
-//        'cs_bc153b8a7a1189f72afbd009d73205e1ba05cde7',
-//        [
-//            'wp_api' => true,
-//            'version' => 'wc/v2',
-//        ]);
-
-
     $woo = new wooapiconnect("http://princesspurpose.co.za", [
     'wp_api' => true,
     'version' => 'wc/v2',
