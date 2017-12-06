@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Princess with a Purpose</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 18px;
+            }
+
+            h1 {
+                color: #3F3F3F;
+                letter-spacing: 3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 30px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Princess with a Purpose Results</h1>
+
+
+        <?php if (isset($body)) : ?>
+            <?php
+          //  var_dump($body);
+            foreach ($body as $name => $data){
+               // var_dump($data);
+                echo"<dl>";
+                echo "<dt><h3>".$name." - ". $data['grandtotal'] ."</h3></dt>";
+
+                foreach($data['totals'] as $date => $amounts){
+                    foreach($amounts as  $amount){
+                        echo "<dd>";
+                        echo $date. " - " . $amount;
+                        echo "</dd>";
+                    }
+                }
+                echo "</dl>";
+            }
+            ?>
+        <?php else: ?>
+            <p>Nothing Shown</a></p>
+        <?php endif; ?>
+    </body>
+</html>
