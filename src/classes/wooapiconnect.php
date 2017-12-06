@@ -31,7 +31,7 @@ class WooApiConnect extends Client {
 	
 	public $key='voting-points';
 	
-	public function __construct($url,array $options = []){
+	public function __construct(array $options = []){
 
 	    //Get environment keys - this is so far the only place it is used , so fuckit
         //will figure out how the fuck to add this to the SLIM APP
@@ -47,7 +47,7 @@ class WooApiConnect extends Client {
         */
 		
 		$this->theClient = new Client(
-		$url,
+		getenv("Site_Url"),
 		getenv("Consumer_Key"),
 		getenv("Consumer_Secret"),
 		$options
